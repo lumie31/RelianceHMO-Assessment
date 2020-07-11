@@ -13,7 +13,7 @@ const Grid = ({ items }) => (
         <ProviderCard
           key={provider.id}
           imageUrl={provider.imageUrl}
-          address={provider.location.address}
+          address={provider.location?.address}
           name={provider.name}
           rating={provider.rating}
           providerType={provider.type}

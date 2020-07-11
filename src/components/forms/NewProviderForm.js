@@ -1,12 +1,23 @@
 import React from 'react';
 
 class NewProviderForm extends React.Component {
-
   // TASK 5: Add New Provider
   // Add Functionality to the form below
-  // On submission it should make a POST request to 
+  // On submission it should make a POST request to
   // the server to create a new provider.
   // Refer to the API documentation for details.
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+    handleSubmit() {
+      
+    }
 
   render() {
     return (
@@ -40,16 +51,21 @@ class NewProviderForm extends React.Component {
             <option value="pharmacy">Pharmacy</option>
             <option value="clinic">Clinic</option>
           </select>
-        </div>        
+        </div>
         <div className="form-group">
           <label htmlFor="image">Provider Image</label>
-          <img className="img-responsive" src="https://via.placeholder.com/1500x840" alt="new provider"/>
+          <img
+            className="img-responsive"
+            src="https://via.placeholder.com/1500x840"
+            alt="new provider"
+          />
           <input type="file" name="file" />
         </div>
         <div className="form-group button-row">
           <button
             type="submit"
             className="btn btn-primary no-margin"
+            onClick={this.handleSubmit}
           >
             Submit
           </button>
